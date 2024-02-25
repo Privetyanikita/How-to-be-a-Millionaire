@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum Constant {
+enum Constants {
     enum background {
         static let backgroundWithBlur = UIImage(named: "background1")
         static let backgroundWithMoney = UIImage(named: "background2")

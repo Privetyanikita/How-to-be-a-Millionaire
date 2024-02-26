@@ -13,6 +13,12 @@
 		84090F3B2B8CF947002E8493 /* LossViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090F3A2B8CF947002E8493 /* LossViewController.swift */; };
 		84090F3D2B8CF99A002E8493 /* LossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090F3C2B8CF99A002E8493 /* LossView.swift */; };
 		84090F3F2B8CF9AB002E8493 /* LossModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090F3E2B8CF9AB002E8493 /* LossModel.swift */; };
+		84090F522B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F4C2B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3.mp3 */; };
+		84090F532B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F4D2B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */; };
+		84090F542B8D0AF2002E8493 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F4E2B8D0AF2002E8493 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */; };
+		84090F552B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F4F2B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */; };
+		84090F562B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F502B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */; };
+		84090F572B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F512B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */; };
 		8447B4412B8B865400223426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447B4402B8B865400223426 /* AppDelegate.swift */; };
 		8447B4432B8B865400223426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447B4422B8B865400223426 /* SceneDelegate.swift */; };
 		8447B44A2B8B865600223426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8447B4492B8B865600223426 /* Assets.xcassets */; };
@@ -41,6 +47,12 @@
 		84090F3A2B8CF947002E8493 /* LossViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossViewController.swift; sourceTree = "<group>"; };
 		84090F3C2B8CF99A002E8493 /* LossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossView.swift; sourceTree = "<group>"; };
 		84090F3E2B8CF9AB002E8493 /* LossModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossModel.swift; sourceTree = "<group>"; };
+		84090F4C2B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "otvet-vernyiy-5267__=2.mp3.mp3"; sourceTree = "<group>"; };
+		84090F4D2B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "otvet-vernyiy-5267__=2.mp3 (1).mp3"; sourceTree = "<group>"; };
+		84090F4E2B8D0AF2002E8493 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3"; sourceTree = "<group>"; };
+		84090F4F2B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3"; sourceTree = "<group>"; };
+		84090F502B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3"; sourceTree = "<group>"; };
+		84090F512B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3"; sourceTree = "<group>"; };
 		8447B43D2B8B865400223426 /* How to be a Millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How to be a Millionaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8447B4402B8B865400223426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8447B4422B8B865400223426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +354,12 @@
 		84BDC28D2B8BBC0400DE3466 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				84090F502B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */,
+				84090F4E2B8D0AF2002E8493 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */,
+				84090F4D2B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */,
+				84090F4C2B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3.mp3 */,
+				84090F4F2B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */,
+				84090F512B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -411,8 +429,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84090F552B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */,
 				8447B44D2B8B865600223426 /* LaunchScreen.storyboard in Resources */,
+				84090F522B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3.mp3 in Resources */,
 				8447B44A2B8B865600223426 /* Assets.xcassets in Resources */,
+				84090F542B8D0AF2002E8493 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 in Resources */,
+				84090F572B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */,
+				84090F562B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */,
+				84090F532B8D0AF2002E8493 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

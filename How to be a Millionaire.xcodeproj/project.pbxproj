@@ -32,12 +32,6 @@
 		84BDC2882B8BADE900DE3466 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC2872B8BADE900DE3466 /* QuestionModel.swift */; };
 		84BDC28A2B8BAE1E00DE3466 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC2892B8BAE1E00DE3466 /* QuestionView.swift */; };
 		84BDC28C2B8BAE2D00DE3466 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC28B2B8BAE2D00DE3466 /* QuestionController.swift */; };
-		84BDC2942B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC28E2B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */; };
-		84BDC2952B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC28F2B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 */; };
-		84BDC2962B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2902B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */; };
-		84BDC2972B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2912B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */; };
-		84BDC2982B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2922B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */; };
-		84BDC2992B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2932B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,12 +60,6 @@
 		84BDC2872B8BADE900DE3466 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		84BDC2892B8BAE1E00DE3466 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		84BDC28B2B8BAE2D00DE3466 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
-		84BDC28E2B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC28F2B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "otvet-vernyiy-5267__=2.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/otvet-vernyiy-5267__=2.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC2902B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC2912B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "otvet-vernyiy-5267__=2.mp3 (1).mp3"; path = "../../../../../../Downloads/звуки для миллионера/otvet-vernyiy-5267__=2.mp3 (1).mp3"; sourceTree = "<group>"; };
-		84BDC2922B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC2932B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,12 +342,6 @@
 		84BDC28D2B8BBC0400DE3466 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				84BDC2932B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */,
-				84BDC2922B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */,
-				84BDC2912B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */,
-				84BDC28F2B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 */,
-				84BDC28E2B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */,
-				84BDC2902B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -429,14 +411,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BDC2942B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */,
-				84BDC2952B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 in Resources */,
 				8447B44D2B8B865600223426 /* LaunchScreen.storyboard in Resources */,
 				8447B44A2B8B865600223426 /* Assets.xcassets in Resources */,
-				84BDC2962B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */,
-				84BDC2972B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 in Resources */,
-				84BDC2992B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */,
-				84BDC2982B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

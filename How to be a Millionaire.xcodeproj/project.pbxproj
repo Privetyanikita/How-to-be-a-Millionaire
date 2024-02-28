@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AAC66FE2B8E5BB80052C70E /* CustomCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC66FD2B8E5BB80052C70E /* CustomCenterButton.swift */; };
+		1AAC67002B8F38750052C70E /* CustomBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAC66FF2B8F38750052C70E /* CustomBottomButton.swift */; };
 		84090F312B8CF8CC002E8493 /* StartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090F302B8CF8CC002E8493 /* StartModel.swift */; };
 		84090F332B8CF8D9002E8493 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090F322B8CF8D9002E8493 /* StartView.swift */; };
 		84090F352B8CF8EC002E8493 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090F342B8CF8EC002E8493 /* StartViewController.swift */; };
@@ -32,15 +34,11 @@
 		84BDC2882B8BADE900DE3466 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC2872B8BADE900DE3466 /* QuestionModel.swift */; };
 		84BDC28A2B8BAE1E00DE3466 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC2892B8BAE1E00DE3466 /* QuestionView.swift */; };
 		84BDC28C2B8BAE2D00DE3466 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC28B2B8BAE2D00DE3466 /* QuestionController.swift */; };
-		84BDC2942B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC28E2B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */; };
-		84BDC2952B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC28F2B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 */; };
-		84BDC2962B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2902B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */; };
-		84BDC2972B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2912B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */; };
-		84BDC2982B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2922B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */; };
-		84BDC2992B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84BDC2932B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AAC66FD2B8E5BB80052C70E /* CustomCenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCenterButton.swift; sourceTree = "<group>"; };
+		1AAC66FF2B8F38750052C70E /* CustomBottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomButton.swift; sourceTree = "<group>"; };
 		84090F302B8CF8CC002E8493 /* StartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartModel.swift; sourceTree = "<group>"; };
 		84090F322B8CF8D9002E8493 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		84090F342B8CF8EC002E8493 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +64,6 @@
 		84BDC2872B8BADE900DE3466 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		84BDC2892B8BAE1E00DE3466 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		84BDC28B2B8BAE2D00DE3466 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
-		84BDC28E2B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC28F2B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "otvet-vernyiy-5267__=2.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/otvet-vernyiy-5267__=2.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC2902B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC2912B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "otvet-vernyiy-5267__=2.mp3 (1).mp3"; path = "../../../../../../Downloads/звуки для миллионера/otvet-vernyiy-5267__=2.mp3 (1).mp3"; sourceTree = "<group>"; };
-		84BDC2922B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3"; sourceTree = "<group>"; };
-		84BDC2932B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3"; path = "../../../../../../Downloads/звуки для миллионера/bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				8447B45D2B8B8AB300223426 /* GameView.swift */,
+				1AAC66FD2B8E5BB80052C70E /* CustomCenterButton.swift */,
+				1AAC66FF2B8F38750052C70E /* CustomBottomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,12 +348,6 @@
 		84BDC28D2B8BBC0400DE3466 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				84BDC2932B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */,
-				84BDC2922B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 */,
-				84BDC2912B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 */,
-				84BDC28F2B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 */,
-				84BDC28E2B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */,
-				84BDC2902B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -429,14 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BDC2942B8BBC3300DE3466 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */,
-				84BDC2952B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3.mp3 in Resources */,
 				8447B44D2B8B865600223426 /* LaunchScreen.storyboard in Resources */,
 				8447B44A2B8B865600223426 /* Assets.xcassets in Resources */,
-				84BDC2962B8BBC3300DE3466 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */,
-				84BDC2972B8BBC3300DE3466 /* otvet-vernyiy-5267__=2.mp3 (1).mp3 in Resources */,
-				84BDC2992B8BBC3300DE3466 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */,
-				84BDC2982B8BBC3300DE3466 /* otvet-prinyat-teper-govorit-veduschiy-5266-1__=7.mp3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,11 +442,13 @@
 				84090F3B2B8CF947002E8493 /* LossViewController.swift in Sources */,
 				8447B4702B8B8CDB00223426 /* RuleModel.swift in Sources */,
 				8447B4742B8B8CFD00223426 /* RulesViewController.swift in Sources */,
+				1AAC67002B8F38750052C70E /* CustomBottomButton.swift in Sources */,
 				8447B4412B8B865400223426 /* AppDelegate.swift in Sources */,
 				8447B45E2B8B8AB300223426 /* GameView.swift in Sources */,
 				84090F312B8CF8CC002E8493 /* StartModel.swift in Sources */,
 				8447B4432B8B865400223426 /* SceneDelegate.swift in Sources */,
 				84BDC28A2B8BAE1E00DE3466 /* QuestionView.swift in Sources */,
+				1AAC66FE2B8E5BB80052C70E /* CustomCenterButton.swift in Sources */,
 				8447B4722B8B8CEC00223426 /* RuleView.swift in Sources */,
 				8447B45C2B8B8AA800223426 /* GameModel.swift in Sources */,
 				8447B4762B8BA57200223426 /* Constants.swift in Sources */,
@@ -611,7 +595,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R5SS3C487L;
+				DEVELOPMENT_TEAM = KZZGK78Y3X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "How to be a Millionaire/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
@@ -644,7 +628,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R5SS3C487L;
+				DEVELOPMENT_TEAM = KZZGK78Y3X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "How to be a Millionaire/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";

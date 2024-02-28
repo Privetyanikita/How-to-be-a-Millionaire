@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class GameView: UIViewController {
+final class GameView: UIView {
     
     private let topLabelTexts = [
         "On which rock was started the history of United Statesby disembarkaiton on it by Mayflower Piligrms?",
@@ -39,25 +39,29 @@ final class GameView: UIViewController {
     private let buttonCallAFriend = CustomBottomButton(image: "callFriendImage")
     private let buttonHelpAudience = CustomBottomButton(image: "helpAudienceImage")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         assignViewBackground()
         assignViewElements()
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: Background Settings
     
     private func assignViewBackground() {
         let background = UIImage(named: "background3")
         var imageView: UIImageView!
         
-        imageView = UIImageView(frame: view.bounds)
+        imageView = UIImageView(frame: self.bounds)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.image = background
-        imageView.center = view.center
-        view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        imageView.center = self.center
+        self.addSubview(imageView)
+        self.sendSubviewToBack(imageView)
     }
     //MARK: Top Logo Image
     
@@ -67,9 +71,9 @@ final class GameView: UIViewController {
         
         logo.image = UIImage(named: "logoImage")
         logo.contentMode = .scaleAspectFit
-        view.addSubview(logo)
+        self.addSubview(logo)
         logo.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(19)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(19)
             make.left.equalToSuperview().offset(18)
             make.width.equalTo(87)
             make.height.equalTo(87)
@@ -85,9 +89,9 @@ final class GameView: UIViewController {
                                      alpha: 1)
         topLabel.font = .systemFont(ofSize: 18, weight: .semibold)
         topLabel.numberOfLines = 0
-        view.addSubview(topLabel)
+        self.addSubview(topLabel)
         topLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(9)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(9)
             make.right.equalToSuperview().offset(7)
             make.width.equalTo(281)
             make.height.equalTo(126)
@@ -102,7 +106,7 @@ final class GameView: UIViewController {
                                                   blue: 255/255,
                                                   alpha: 1)
         numberOfquestionLabel.font = .systemFont(ofSize: 24, weight: .semibold)
-        view.addSubview(numberOfquestionLabel)
+        self.addSubview(numberOfquestionLabel)
         numberOfquestionLabel.snp.makeConstraints { make in
             make.top.equalTo(logo.snp.bottom).offset(14)
             make.left.equalToSuperview().offset(27)
@@ -119,7 +123,7 @@ final class GameView: UIViewController {
                                        blue: 255/255,
                                        alpha: 1)
         moneyLabel.font = .systemFont(ofSize: 24, weight: .semibold)
-        view.addSubview(moneyLabel)
+        self.addSubview(moneyLabel)
         moneyLabel.snp.makeConstraints { make in
             make.top.equalTo(logo.snp.bottom).offset(14)
             make.right.equalToSuperview()
@@ -128,28 +132,28 @@ final class GameView: UIViewController {
         }
         //MARK: Center Buttons
         
-        view.addSubview(buttonAcustom)
+        self.addSubview(buttonAcustom)
         buttonAcustom.snp.makeConstraints { make in
             make.top.equalTo(moneyLabel.snp.bottom).offset(23)
             make.right.equalToSuperview().inset(33)
             make.width.equalTo(321)
             make.height.equalTo(54)
         }
-        view.addSubview(buttonBcustom)
+        self.addSubview(buttonBcustom)
         buttonBcustom.snp.makeConstraints { make in
             make.width.equalTo(buttonAcustom)
             make.height.equalTo(buttonAcustom)
             make.left.right.equalTo(buttonAcustom)
             make.top.equalTo(buttonAcustom.snp.bottom).offset(30)
         }
-        view.addSubview(buttonCcustom)
+        self.addSubview(buttonCcustom)
         buttonCcustom.snp.makeConstraints { make in
             make.width.equalTo(buttonBcustom)
             make.height.equalTo(buttonBcustom)
             make.left.right.equalTo(buttonBcustom)
             make.top.equalTo(buttonBcustom.snp.bottom).offset(30)
         }
-        view.addSubview(buttonDcustom)
+        self.addSubview(buttonDcustom)
         buttonDcustom.snp.makeConstraints { make in
             make.width.equalTo(buttonCcustom)
             make.height.equalTo(buttonCcustom)
@@ -158,20 +162,20 @@ final class GameView: UIViewController {
         }
         //MARK: Bottom Buttons
         
-        view.addSubview(buttonFiftyFifty)
+        self.addSubview(buttonFiftyFifty)
         buttonFiftyFifty.snp.makeConstraints { make in
             make.left.equalTo(numberOfquestionLabel)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(59)
+            make.bottom.equalTo(self.safeAreaLayoutGuide).inset(59)
         }
-        view.addSubview(buttonCallAFriend)
+        self.addSubview(buttonCallAFriend)
         buttonCallAFriend.snp.makeConstraints { make in
             make.left.equalTo(buttonFiftyFifty.snp.right).offset(88)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(59)
+            make.bottom.equalTo(self.safeAreaLayoutGuide).inset(59)
         }
-        view.addSubview(buttonHelpAudience)
+        self.addSubview(buttonHelpAudience)
         buttonHelpAudience.snp.makeConstraints { make in
-            make.right.equalTo(view.safeAreaLayoutGuide).inset(100)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(59)
+            make.right.equalTo(self.safeAreaLayoutGuide).inset(100)
+            make.bottom.equalTo(self.safeAreaLayoutGuide).inset(59)
         }
         
     }

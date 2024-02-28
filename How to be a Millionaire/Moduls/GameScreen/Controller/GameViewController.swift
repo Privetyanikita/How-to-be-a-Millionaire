@@ -7,12 +7,12 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-    }
-
-
-}
+//class GameViewController: UIViewController {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        view.backgroundColor = .red
+//    }
+//
+//
+//}

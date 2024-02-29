@@ -8,6 +8,7 @@
 import UIKit
 
 struct QuestionModel {
+    var image: UIImage!
     var question: String
     var money: String
 }

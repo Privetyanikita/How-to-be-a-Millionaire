@@ -31,7 +31,6 @@ final class CustomCenterButton: UIButton {
         element.numberOfLines = 2
         element.adjustsFontSizeToFitWidth = true
         element.minimumScaleFactor = 0.3
-        
         return element
     }()
     
@@ -43,10 +42,9 @@ final class CustomCenterButton: UIButton {
         return element
     }()
     
-    init(char: String, answer: String) {
+    init(char: String) {
         super.init(frame: .zero)
         self.charForAnswerLabel.text = char
-        self.questionAnswerLabel.text = answer
         self.layer.cornerRadius = 16
         self.layer.borderWidth = 2
         self.layer.borderColor = CGColor(gray: 1, alpha: 1)
@@ -62,6 +60,7 @@ final class CustomCenterButton: UIButton {
     private func setupViews(){
         [questionButtonImage, charForAnswerLabel, questionAnswerLabel].forEach { self.addSubview($0) }
     }
+    
     private func setupConstraints() {
         questionButtonImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -77,6 +76,15 @@ final class CustomCenterButton: UIButton {
             make.bottom.equalToSuperview().inset(13)
         }
     }
+    
+    public func updateValue(answer: String) {
+        questionAnswerLabel.text = answer
+        questionButtonImage.image = UIImage(named: "blueButton")
+    }
+    
+    public func updateButtonState(isCorrect: Bool) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.questionButtonImage.image = isCorrect ? UIImage(named: "greenButton") : UIImage(named: "redButton")
+        })
+    }
 }
-
-//done for custom button

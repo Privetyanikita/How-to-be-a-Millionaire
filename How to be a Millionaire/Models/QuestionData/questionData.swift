@@ -9,8 +9,17 @@ import Foundation
 
 struct QuestionStruct{
     let question: String
-    let correctAnswer: String
-    let answers: [String]
+    let answers: [AnswerStruct]
+}
+
+struct AnswerStruct {
+    let value: String
+    let isCorrect: Bool
+    
+    init(value: String, isCorrect: Bool = false) {
+        self.value = value
+        self.isCorrect = isCorrect
+    }
 }
 
 struct Source {
@@ -18,78 +27,138 @@ struct Source {
     let questionsArray: [QuestionStruct] = [
         QuestionStruct(
             question: "What is the capital of France?",
-            correctAnswer: "Paris",
-            answers: ["Paris", "London", "Rome", "Berlin"]
+            answers: [
+                AnswerStruct(value: "Paris", isCorrect: true),
+                AnswerStruct(value: "London"),
+                AnswerStruct(value: "Rome"),
+                AnswerStruct(value: "Berlin")
+            ]
         ),
         QuestionStruct(
             question: "Who wrote 'Hamlet'?",
-            correctAnswer: "William Shakespeare",
-            answers: ["William Shakespeare", "Charles Dickens", "Leo Tolstoy", "Mark Twain"]
+            answers: [
+                AnswerStruct(value: "William Shakespeare", isCorrect: true),
+                AnswerStruct(value: "Charles Dickens"),
+                AnswerStruct(value: "Leo Tolstoy"),
+                AnswerStruct(value: "Mark Twain"),
+            ]
         ),
         QuestionStruct(
             question: "What is the smallest planet in our solar system?",
-            correctAnswer: "Mercury",
-            answers: ["Mercury", "Mars", "Earth", "Venus"]
+            answers: [
+                AnswerStruct(value: "Mercury", isCorrect: true),
+                AnswerStruct(value: "Mars"),
+                AnswerStruct(value: "Earth"),
+                AnswerStruct(value: "Venus"),
+            ]
         ),
         QuestionStruct(
             question: "Which element has the chemical symbol 'O'?",
-            correctAnswer: "Oxygen",
-            answers: ["Oxygen", "Gold", "Iron", "Silver"]
+            answers: [
+                AnswerStruct(value: "Oxygen", isCorrect: true),
+                AnswerStruct(value: "Gold"),
+                AnswerStruct(value: "Iron"),
+                AnswerStruct(value: "Silver"),
+            ]
         ),
         QuestionStruct(
             question: "In which year did the Titanic sink?",
-            correctAnswer: "1912",
-            answers: ["1912", "1910", "1914", "1916"]
+            answers: [
+                AnswerStruct(value: "1912", isCorrect: true),
+                AnswerStruct(value: "1910"),
+                AnswerStruct(value: "1914"),
+                AnswerStruct(value: "1916"),
+            ]
         ),
         QuestionStruct(
             question: "Who painted the Mona Lisa?",
-            correctAnswer: "Leonardo da Vinci",
-            answers: ["Leonardo da Vinci", "Pablo Picasso", "Vincent Van Gogh", "Claude Monet"]
+            answers: [
+                AnswerStruct(value: "Leonardo da Vinci", isCorrect: true),
+                AnswerStruct(value: "Pablo Picasso"),
+                AnswerStruct(value: "Vincent Van Gogh"),
+                AnswerStruct(value: "Claude Monet"),
+            ]
         ),
         QuestionStruct(
             question: "What is the largest ocean on Earth?",
-            correctAnswer: "Pacific Ocean",
-            answers: ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"]
+            answers: [
+                AnswerStruct(value: "Pacific Ocean", isCorrect: true),
+                AnswerStruct(value: "Atlantic Ocean"),
+                AnswerStruct(value: "Indian Ocean"),
+                AnswerStruct(value: "Arctic Ocean"),
+            ]
         ),
         QuestionStruct(
             question: "How many continents are there?",
-            correctAnswer: "7",
-            answers: ["7", "5", "6", "8"]
+            answers: [
+                AnswerStruct(value: "7", isCorrect: true),
+                AnswerStruct(value: "5"),
+                AnswerStruct(value: "6"),
+                AnswerStruct(value: "8"),
+            ]
         ),
         QuestionStruct(
             question: "Which planet is known as the Red Planet?",
-            correctAnswer: "Mars",
-            answers: ["Mars", "Jupiter", "Venus", "Saturn"]
+            answers: [
+                AnswerStruct(value: "Mars", isCorrect: true),
+                AnswerStruct(value: "Jupiter"),
+                AnswerStruct(value: "Venus"),
+                AnswerStruct(value: "Saturn"),
+            ]
         ),
         QuestionStruct(
             question: "What is the hardest natural substance on Earth?",
-            correctAnswer: "Diamond",
-            answers: ["Diamond", "Gold", "Iron", "Quartz"]
+            answers: [
+                AnswerStruct(value: "Diamond", isCorrect: true),
+                AnswerStruct(value: "Gold"),
+                AnswerStruct(value: "Iron"),
+                AnswerStruct(value: "Quartz"),
+            ]
         ),
         QuestionStruct(
             question: "Which gas is most abundant in the Earth's atmosphere?",
-            correctAnswer: "Nitrogen",
-            answers: ["Nitrogen", "Oxygen", "Carbon Dioxide", "Argon"]
+            answers: [
+                AnswerStruct(value: "Nitrogen", isCorrect: true),
+                AnswerStruct(value: "Oxygen"),
+                AnswerStruct(value: "Carbon Dioxide"),
+                AnswerStruct(value: "Argon"),
+            ]
         ),
         QuestionStruct(
             question: "What is the capital city of Japan?",
-            correctAnswer: "Tokyo",
-            answers: ["Tokyo", "Kyoto", "Osaka", "Nagasaki"]
+            answers: [
+                AnswerStruct(value: "Tokyo", isCorrect: true),
+                AnswerStruct(value: "Kyoto"),
+                AnswerStruct(value: "Osaka"),
+                AnswerStruct(value: "Nagasaki"),
+            ]
         ),
         QuestionStruct(
             question: "Who is known as the 'Father of Computers'?",
-            correctAnswer: "Charles Babbage",
-            answers: ["Charles Babbage", "Alan Turing", "Bill Gates", "Steve Jobs"]
+            answers: [
+                AnswerStruct(value: "Charles Babbage", isCorrect: true),
+                AnswerStruct(value: "Alan Turing"),
+                AnswerStruct(value: "Bill Gates"),
+                AnswerStruct(value: "Steve Jobs"),
+            ]
         ),
         QuestionStruct(
             question: "Which country is the largest by land area?",
-            correctAnswer: "Russia",
-            answers: ["Russia", "Canada", "China", "United States"]
+            answers: [
+                AnswerStruct(value: "Russia", isCorrect: true),
+                AnswerStruct(value: "Canada"),
+                AnswerStruct(value: "China"),
+                AnswerStruct(value: "United States"),
+            ]
         ),
         QuestionStruct(
             question: "What is the speed of light?",
-            correctAnswer: "Approximately 300,000 kilometers per second",
-            answers: ["Approximately 300,000 kilometers per second", "Approximately 150,000 kilometers per second", "Approximately 400,000 kilometers per second", "Approximately 200,000 kilometers per second"]
+            answers: [
+                AnswerStruct(value: "Approximately 300,000 kilometers per second", isCorrect: true),
+                AnswerStruct(value: "Approximately 150,000 kilometers per second"),
+                AnswerStruct(value: "Approximately 400,000 kilometers per second"),
+                AnswerStruct(value: "Approximately 200,000 kilometers per second"),
+            ]
         )
     ]
 }

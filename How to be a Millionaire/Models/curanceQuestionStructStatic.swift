@@ -10,12 +10,22 @@ import Foundation
 struct curanceQuestionStructStatic {
     static var question = 0
     static var money = 0
+    static var correctAnswers: [Bool] = []
     
     static func answerCorrect(){
-        let data = Source().questionsArray
-        if question != data.count{
-            question += 1
-            money += 1
-        }
+      let data = Source().questionsArray
+      if question != data.count{
+        question += 1
+        money += 1
+        correctAnswers.append(true) // добавляем информацию о правильном ответе
+      }
+    }
+    
+    static func answerIncorrect(){
+      let data = Source().questionsArray
+      if question != data.count{
+        question += 1
+        correctAnswers.append(false) // добавляем информацию о неправильном ответе
+      }
     }
 }

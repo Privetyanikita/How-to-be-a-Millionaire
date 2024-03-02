@@ -57,10 +57,16 @@ class LossViewController: UIViewController {
         setupConstraints()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        numbAttempt.text = "\(user), you lose"
+//    }
+    
     private func setupViews(){
         view.addSubview(background)
         view.addSubview(logo)
         view.addSubview(numbAttempt)
+        view.addSubview(loseLabel)
         view.addSubview(playAgainButton)
     }
 }

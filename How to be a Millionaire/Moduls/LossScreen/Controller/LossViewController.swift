@@ -64,7 +64,7 @@ class LossViewController: UIViewController {
             maker.centerX.equalToSuperview()
             maker.top.equalTo(logo.snp.bottom).offset(47)
         }
-
+//
         // Button PlayAgain
         let playAgainButton = UIButton(type: .system)
         playAgainButton.backgroundColor = UIColor(red: 52/255, green: 184/255, blue: 58/255, alpha: 1)

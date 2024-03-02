@@ -36,6 +36,7 @@ final class CustomBottomButton: UIButton {
     
     private func setupConstraints() {
         bottomButtonImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
             make.width.equalTo(107)
             make.height.equalTo(83)
         }

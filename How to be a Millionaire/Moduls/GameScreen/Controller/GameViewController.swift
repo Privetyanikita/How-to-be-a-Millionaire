@@ -153,6 +153,7 @@ final class GameViewController: UIViewController {
         if answer.isCorrect {
             questionIndex += 1
             moneyIndex += 1
+            unAlphaButton()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
                 self.setupQuestion()
             }))
@@ -178,11 +179,11 @@ final class GameViewController: UIViewController {
         buttonFiftyFifty.bottomButtonImage.image = UIImage(named: "help50:50ImageCross")
   
         var buttonsArray = gameView.answerButtons
-        buttonsArray.remove(at: 1)
-        buttonsArray.remove(at: 2)
+        buttonsArray.remove(at: 0)
+        buttonsArray.remove(at: Int.random(in: 0..<buttonsArray.count))
         
         for button in buttonsArray {
-            button.alpha = 0.7
+            button.alpha = 0.5
         }
     }
 
@@ -193,6 +194,13 @@ final class GameViewController: UIViewController {
     
     @objc func buttonCallAFriendAction() {
         buttonCallAFriend.bottomButtonImage.image = UIImage(named: "callFriendImageCross")
+        var buttonsArray = gameView.answerButtons
+        buttonsArray.remove(at: 0)
+        buttonsArray.remove(at: Int.random(in: 0..<buttonsArray.count))
+        
+        for button in buttonsArray {
+            button.alpha = 0.5
+        }
     }
     
     private func setupHelpAudienceButtonTouch() {
@@ -201,8 +209,19 @@ final class GameViewController: UIViewController {
     
     @objc func buttonHelpAudienceAction() {
         buttonHelpAudience.bottomButtonImage.image = UIImage(named: "helpAudienceImageCross")
+        var buttonsArray = gameView.answerButtons
+        buttonsArray.remove(at: 0)
+        
+        for button in buttonsArray {
+            button.alpha = 0.5
+        }
     }
     
+    private func unAlphaButton(){
+        for button in gameView.answerButtons {
+            button.alpha = 1
+        }
+    }
 }
 
 //MARK: - GameView: - Extensions
@@ -245,11 +264,11 @@ extension GameViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(59)
         }
         buttonCallAFriend.snp.makeConstraints { make in
-            make.left.equalTo(buttonFiftyFifty.snp.right).offset(88)
+            make.left.equalTo(buttonFiftyFifty.snp.right).offset(13)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(59)
         }
         buttonHelpAudience.snp.makeConstraints { make in
-            make.right.equalTo(view.safeAreaLayoutGuide).inset(100)
+            make.right.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(59)
         }
         

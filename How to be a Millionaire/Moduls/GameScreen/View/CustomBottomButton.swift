@@ -15,6 +15,7 @@ final class CustomBottomButton: UIButton {
         element.contentMode = .scaleToFill
         element.image = UIImage(named: "callFriendImage")
         element.clipsToBounds = true
+       
         return element
     }()
     

@@ -42,6 +42,15 @@ final class CustomCenterButton: UIButton {
         return element
     }()
     
+    override var isHighlighted: Bool {
+            didSet {
+                UIView.animate(withDuration: 0.2, animations: { [weak self] in
+                    guard let self = self else { return }
+                    self.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.96, y: 0.96) : .identity
+                })
+            }
+        }
+    
     init(char: String) {
         super.init(frame: .zero)
         self.charForAnswerLabel.text = char

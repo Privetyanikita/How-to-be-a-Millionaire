@@ -7,6 +7,22 @@
 
 import UIKit
 
+// ̶T̶O̶D̶O̶ ̶-̶ ̶с̶д̶е̶л̶а̶т̶ь̶ ̶п̶е̶р̶е̶х̶о̶д̶ ̶н̶а̶ ̶э̶к̶р̶а̶н̶ ̶и̶г̶р̶ы̶
+// ̶T̶O̶D̶O̶ ̶-̶ ̶п̶е̶р̶е̶д̶е̶л̶а̶т̶ь̶ ̶в̶с̶ё̶ ̶н̶а̶ ̶а̶н̶г̶л̶.̶ ̶я̶з̶ы̶к̶
+// ̶T̶O̶D̶O̶ ̶-̶ ̶п̶о̶п̶р̶а̶в̶и̶т̶ь̶ ̶с̶у̶м̶м̶ы̶ ̶к̶ ̶п̶р̶а̶в̶о̶м̶у̶ ̶к̶р̶а̶ю̶
+// ̶T̶O̶D̶O̶ ̶-̶ ̶п̶е̶р̶е̶д̶е̶л̶а̶т̶ь̶ ̶п̶е̶р̶е̶х̶о̶д̶ ̶н̶е̶ ̶п̶о̶ ̶н̶а̶ж̶а̶т̶и̶ю̶ ̶н̶а̶ ̶я̶ч̶е̶й̶к̶у̶,̶ ̶а̶ ̶п̶о̶ ̶т̶а̶й̶м̶е̶р̶у̶
+// TODO - передать на мой экран результат ответа из экрана игры true/false
+// TODO - в зависимости от результата менять картинку в ячейке
+// TODO - сделать так чтобы прогресс изменения цвета картинки шёл снизу вверх
+// TODO - сделать мигание вопроса с переходом на экран игры
+// TODO - сделать изменение на жёлтый на несгораемых суммах
+// TODO - сделать алерт на несгораемых суммах с опцией забора приза или продолжением игры
+// TODO - сделать переход на экран проигрыша после красного мигания ячейки
+
+
+
+
+
 class QuestionListViewController: UIViewController {
     
     // MARK: - Properties
@@ -22,6 +38,8 @@ class QuestionListViewController: UIViewController {
         super.viewDidLoad()
         questionList = fetchData()
         configureTableView()
+        scheduleGameViewControllerPresentation() //переход на другой экран по времени
+        
     }
     
     // MARK: - Methods
@@ -34,6 +52,7 @@ class QuestionListViewController: UIViewController {
         tableView.rowHeight = 50
         tableView.register(QuestionListCell.self, forCellReuseIdentifier: Cells.questionCell)
         tableView.separatorStyle = .none
+        tableView.isUserInteractionEnabled = false //отключает нажатие ячеек
         tableView.pin(to: view)
     }
     
@@ -53,14 +72,24 @@ class QuestionListViewController: UIViewController {
         let logoImageView = UIImageView(image: Constants.logoImage)
         logoImageView.contentMode = .scaleAspectFit
         tableView.tableHeaderView = logoImageView
-
-        let topInset = 10 // высота вашего логотипа
-        tableView.contentInset = UIEdgeInsets(top: CGFloat(topInset), left: 0, bottom: 0, right: 0)
+        
+        let scale: CGFloat = 0.5 // Устанавливаем размер логотипа
+        logoImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let startViewController = StartViewController()
-        present(startViewController, animated: true, completion: nil)
+        let gameViewController = GameViewController()
+        gameViewController.modalPresentationStyle = .fullScreen //делает разворот на весь экран телефона
+        present(gameViewController, animated: true, completion: nil)
+    }
+    
+    ///переход на другой экран по истечении нескольких секунд
+    func scheduleGameViewControllerPresentation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // переход через 2 секунды
+            let gameViewController = GameViewController()
+            gameViewController.modalPresentationStyle = .fullScreen
+            self.present(gameViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -74,33 +103,56 @@ extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.questionCell) as! QuestionListCell
         let question = questionList[indexPath.row]
+        
+        // Передайте результат ответа обратно на QuestionListViewController через замыкание
+//        gameViewController.didSelectAnswerHandler = { [weak self] isCorrect in
+//            question.isCorrect = isCorrect
+//            cell.set(question: question)
+//        }
+        
         cell.set(question: question)
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         
         return cell
     }
+    
+    
 }
 
 extension QuestionListViewController {
-    
+    //mock data
     func fetchData() -> [QuestionModel] {
-        let question15 = QuestionModel(image: Constants.buttonForTable.yellowButton, question: "Вопрос 15", money: "1 Миллион")
-        let question14 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 14", money: "500000 RUB")
-        let question13 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 13", money: "250000 RUB")
-        let question12 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 12", money: "125000 RUB")
-        let question11 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 11", money: "64000 RUB")
-        let question10 = QuestionModel(image: Constants.buttonForTable.blueButton, question: "Вопрос 10", money: "32000 RUB")
-        let question9 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 9", money: "16000 RUB")
-        let question8 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 8", money: "8000 RUB")
-        let question7 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 7", money: "4000 RUB")
-        let question6 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 6", money: "2000 RUB")
-        let question5 = QuestionModel(image: Constants.buttonForTable.blueButton, question: "Вопрос 5", money: "1000 RUB")
-        let question4 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 4", money: "500 RUB")
-        let question3 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 3", money: "300 RUB")
-        let question2 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Вопрос 2", money: "200 RUB")
-        let question1 = QuestionModel(image: Constants.buttonForTable.greenButton, question: "Вопрос 1", money: "100 RUB")
+        let question15 = QuestionModel(image: Constants.buttonForTable.yellowButton, question: "Question 15", money: "1 Million")
+        let question14 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 14", money: "500000 $")
+        let question13 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 13", money: "250000 $")
+        let question12 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 12", money: "125000 $")
+        let question11 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 11", money: "64000 $")
+        let question10 = QuestionModel(image: Constants.buttonForTable.blueButton, question: "Question 10", money: "32000 $")
+        let question9 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 9", money: "16000 $")
+        let question8 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 8", money: "8000 $")
+        let question7 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 7", money: "4000 $")
+        let question6 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 6", money: "2000 $")
+        let question5 = QuestionModel(image: Constants.buttonForTable.blueButton, question: "Question 5", money: "1000 $")
+        let question4 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 4", money: "500 $")
+        let question3 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 3", money: "300 $")
+        let question2 = QuestionModel(image: Constants.buttonForTable.purpleButton, question: "Question 2", money: "200 $")
+        let question1 = QuestionModel(image: Constants.buttonForTable.greenButton, question: "Question 1", money: "100 $")
         
         return [question15, question14, question13, question12, question11, question10, question9, question8, question7, question6, question5, question4, question3, question2, question1]
     }
 }
+
+///Реализация передачи ответа (правильный/неправильный) на экран с вопросами
+/*
+ class GameView: UIViewController {
+     var didSelectAnswerHandler: ((Bool) -> Void)?
+
+     // ... остальной код ...
+ }
+ 
+ func answerButtonTapped(isCorrect: Bool) {
+     didSelectAnswerHandler?(isCorrect)
+ }
+ 
+*/

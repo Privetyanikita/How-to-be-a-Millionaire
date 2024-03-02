@@ -48,12 +48,14 @@ class QuestionListCell: UITableViewCell {
         questionListLabel.numberOfLines = 0
         questionListLabel.adjustsFontSizeToFitWidth = true
         questionListLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        questionListLabel.textAlignment = .left
     }
     
     func configureMoneyLabel() {
         moneyLabel.numberOfLines = 0
         moneyLabel.adjustsFontSizeToFitWidth = true
         moneyLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        moneyLabel.textAlignment = .right
         
     }
     

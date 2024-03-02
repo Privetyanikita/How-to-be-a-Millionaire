@@ -23,7 +23,6 @@ struct AnswerStruct {
 }
 
 struct Source {
-    
     let questionsArray: [QuestionStruct] = [
         QuestionStruct(
             question: "What is the capital of France?",
@@ -160,5 +159,29 @@ struct Source {
                 AnswerStruct(value: "Approximately 200,000 kilometers per second"),
             ]
         )
+    ]
+}
+
+struct MoneyStuct {
+    let money: String
+}
+
+struct MoneySource {
+    let moneyArray: [MoneyStuct] = [
+        MoneyStuct(money: "100 $"),
+        MoneyStuct(money: "200 $"),
+        MoneyStuct(money: "300 $"),
+        MoneyStuct(money: "400 $"),
+        MoneyStuct(money: "500 $"),
+        MoneyStuct(money: "1000 $"),
+        MoneyStuct(money: "2000 $"),
+        MoneyStuct(money: "4000 $"),
+        MoneyStuct(money: "8000 $"),
+        MoneyStuct(money: "16000 $"),
+        MoneyStuct(money: "32000 $"),
+        MoneyStuct(money: "64000 $"),
+        MoneyStuct(money: "125000 $"),
+        MoneyStuct(money: "250000 $"),
+        MoneyStuct(money: "500000 $"),
     ]
 }

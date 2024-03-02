@@ -11,6 +11,7 @@ import SnapKit
 final class GameViewController: UIViewController {
     
     //MARK: - Properties
+    var onAnswerSelected: ((Bool) -> Void)? //хранилище ответа правильно/неправильно
     
     private let logo: UIImageView = {
         let view = UIImageView()
@@ -133,11 +134,20 @@ final class GameViewController: UIViewController {
         
         if answer.isCorrect {
             questionIndex += 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
+            onAnswerSelected?(true) // передача результата "правильно"
+            
+            // возврат на экран с списком вопросов через 2.5 секунд
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: DispatchWorkItem(block: {
+                let questionListViewController = QuestionListViewController()
+                questionListViewController.modalPresentationStyle = .fullScreen
+                self.present(questionListViewController, animated: true, completion: nil)
+                
                 self.setupQuestion()
             }))
+            
         } else {
             print("You lose Screen!")
+            onAnswerSelected?(false) // передача результата "неправильно"
             
             //переход на следующий экран
         }

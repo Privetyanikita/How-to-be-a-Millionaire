@@ -11,7 +11,7 @@ import UIKit
 // ̶T̶O̶D̶O̶ ̶-̶ ̶п̶е̶р̶е̶д̶е̶л̶а̶т̶ь̶ ̶в̶с̶ё̶ ̶н̶а̶ ̶а̶н̶г̶л̶.̶ ̶я̶з̶ы̶к̶
 // ̶T̶O̶D̶O̶ ̶-̶ ̶п̶о̶п̶р̶а̶в̶и̶т̶ь̶ ̶с̶у̶м̶м̶ы̶ ̶к̶ ̶п̶р̶а̶в̶о̶м̶у̶ ̶к̶р̶а̶ю̶
 // ̶T̶O̶D̶O̶ ̶-̶ ̶п̶е̶р̶е̶д̶е̶л̶а̶т̶ь̶ ̶п̶е̶р̶е̶х̶о̶д̶ ̶н̶е̶ ̶п̶о̶ ̶н̶а̶ж̶а̶т̶и̶ю̶ ̶н̶а̶ ̶я̶ч̶е̶й̶к̶у̶,̶ ̶а̶ ̶п̶о̶ ̶т̶а̶й̶м̶е̶р̶у̶
-// TODO - передать на мой экран результат ответа из экрана игры true/false
+// ̶T̶O̶D̶O̶ ̶-̶ ̶п̶е̶р̶е̶д̶а̶т̶ь̶ ̶н̶а̶ ̶м̶о̶й̶ ̶э̶к̶р̶а̶н̶ ̶р̶е̶з̶у̶л̶ь̶т̶а̶т̶ ̶о̶т̶в̶е̶т̶а̶ ̶и̶з̶ ̶э̶к̶р̶а̶н̶а̶ ̶и̶г̶р̶ы̶ ̶t̶r̶u̶e̶/̶f̶a̶l̶s̶e̶
 // TODO - в зависимости от результата менять картинку в ячейке
 // TODO - сделать так чтобы прогресс изменения цвета картинки шёл снизу вверх
 // TODO - сделать мигание вопроса с переходом на экран игры
@@ -85,7 +85,7 @@ class QuestionListViewController: UIViewController {
     
     ///переход на другой экран по истечении нескольких секунд
     func scheduleGameViewControllerPresentation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // переход через 2 секунды
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // переход на экран игры через 2 секунды
             let gameViewController = GameViewController()
             gameViewController.modalPresentationStyle = .fullScreen
             self.present(gameViewController, animated: true, completion: nil)
@@ -104,18 +104,19 @@ extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.questionCell) as! QuestionListCell
         let question = questionList[indexPath.row]
         
-        // Передайте результат ответа обратно на QuestionListViewController через замыкание
-//        gameViewController.didSelectAnswerHandler = { [weak self] isCorrect in
-//            question.isCorrect = isCorrect
-//            cell.set(question: question)
-//        }
-        
         cell.set(question: question)
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         
         return cell
     }
+    
+    
+    // Передайте результат ответа обратно на QuestionListViewController через замыкание
+//        gameViewController.didSelectAnswerHandler = { [weak self] isCorrect in
+//            question.isCorrect = isCorrect
+//            cell.set(question: question)
+//        }
     
     
 }

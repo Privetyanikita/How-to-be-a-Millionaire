@@ -74,6 +74,7 @@ class StartViewController: UIViewController {
         gameRules.setTitle("Правила игры", for: .normal)
         gameRules.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         gameRules.setTitleColor(.green, for: .normal)
+        gameRules.addTarget(self, action: #selector(rulesScreenTupped), for: .touchUpInside)
         
         
         view.addSubview(gameRules)
@@ -102,5 +103,9 @@ class StartViewController: UIViewController {
             
         }
         
+    }
+    @objc func rulesScreenTupped(){
+        let vc = RulesViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

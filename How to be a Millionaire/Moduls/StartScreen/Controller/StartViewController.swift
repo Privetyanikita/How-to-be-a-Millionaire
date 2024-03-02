@@ -109,8 +109,14 @@ class StartViewController: UIViewController {
         
     }
 
-    @objc func rulesScreenTupped(){
+    @objc private func rulesScreenTupped(){
         let vc = RulesViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc private func goToGame(){
+        let vc = QuestionListViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

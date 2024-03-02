@@ -26,6 +26,7 @@ class RulesViewController: UIViewController {
         return element
     }()
 
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

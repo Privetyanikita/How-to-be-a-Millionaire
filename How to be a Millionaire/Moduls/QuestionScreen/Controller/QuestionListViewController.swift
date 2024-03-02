@@ -46,6 +46,7 @@ class QuestionListViewController: UIViewController {
     
     func configureTableView() {
         view.addSubview(tableView)
+        navigationController?.navigationBar.isHidden = true
         setTableViewDelegates()
         setTableViewBackground()
         setTableViewLogo()

@@ -132,7 +132,7 @@ final class GameViewController: UIViewController {
     
     private func setupQuestion() {
         guard questionIndex < questions.count else { return }
-        let currentQuestion = questions[questionIndex]
+        let currentQuestion = questions[curanceQuestionStructStatic.question]
         topLabel.text = currentQuestion.question
         numberOfquestionLabel.text = "\(questionIndex + 1) Question"
         
@@ -156,12 +156,17 @@ final class GameViewController: UIViewController {
             moneyIndex += 1
             unAlphaButton()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
-                self.setupQuestion()
+                curanceQuestionStructStatic.answerCorrect()
+                self.dismiss(animated: true)
+//                self.setupQuestion()
             }))
             
         } else {
             print("You lose Screen!")
             onAnswerSelected?(false) // передача результата "неправильно"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+                self.dismiss(animated: true)
+            }))
             
             //переход на следующий экран
         }
@@ -172,7 +177,7 @@ final class GameViewController: UIViewController {
         timer = nil
         
         print("Dismiss to Question Screen!")
-        self.navigationController?.popToRootViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     private func setupFiftyFiftyButtonTouch() {

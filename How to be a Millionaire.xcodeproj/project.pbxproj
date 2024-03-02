@@ -21,6 +21,7 @@
 		84090F552B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F4F2B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */; };
 		84090F562B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F502B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */; };
 		84090F572B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84090F512B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */; };
+		840966B72B93773D0028C0EC /* curanceQuestionStructStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840966B62B93773D0028C0EC /* curanceQuestionStructStatic.swift */; };
 		8447B4412B8B865400223426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447B4402B8B865400223426 /* AppDelegate.swift */; };
 		8447B4432B8B865400223426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447B4422B8B865400223426 /* SceneDelegate.swift */; };
 		8447B44A2B8B865600223426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8447B4492B8B865600223426 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		84090F4F2B8D0AF2002E8493 /* zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3.mp3"; sourceTree = "<group>"; };
 		84090F502B8D0AF2002E8493 /* bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3.mp3"; sourceTree = "<group>"; };
 		84090F512B8D0AF2002E8493 /* zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3.mp3"; sourceTree = "<group>"; };
+		840966B62B93773D0028C0EC /* curanceQuestionStructStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curanceQuestionStructStatic.swift; sourceTree = "<group>"; };
 		8447B43D2B8B865400223426 /* How to be a Millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How to be a Millionaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8447B4402B8B865400223426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8447B4422B8B865400223426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				848CBAD12B90688F0084CDA2 /* QuestionData */,
+				840966B62B93773D0028C0EC /* curanceQuestionStructStatic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				8447B4742B8B8CFD00223426 /* RulesViewController.swift in Sources */,
 				1AAC67002B8F38750052C70E /* CustomBottomButton.swift in Sources */,
 				8447B4412B8B865400223426 /* AppDelegate.swift in Sources */,
+				840966B72B93773D0028C0EC /* curanceQuestionStructStatic.swift in Sources */,
 				848CBAD32B9068AE0084CDA2 /* questionData.swift in Sources */,
 				A228D25B2B90CADA0017B63C /* QuestionListCell.swift in Sources */,
 				8447B45E2B8B8AB300223426 /* GameView.swift in Sources */,

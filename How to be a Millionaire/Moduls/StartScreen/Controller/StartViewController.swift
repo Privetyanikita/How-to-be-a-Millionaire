@@ -92,7 +92,7 @@ class StartViewController: UIViewController {
         startGame.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         startGame.setTitleColor(.green, for: .normal)
         
-//        startGame.addTarget(self, action: #selector(goToGame), for: .touchUpInside) - переход на vc
+        startGame.addTarget(self, action: #selector(goToGame), for: .touchUpInside)
         
        
         
@@ -107,9 +107,9 @@ class StartViewController: UIViewController {
         
         
     }
-//    @objc func goToGame() {
-//        let vc = GameViewController()
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
+    @objc func goToGame() {
+        let vc = QuestionListViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

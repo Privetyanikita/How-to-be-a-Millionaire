@@ -115,7 +115,7 @@ class StartViewController: UIViewController {
     }
     
     @objc private func goToGame(){
-        let vc = QuestionListViewController()
+        let vc = MainViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

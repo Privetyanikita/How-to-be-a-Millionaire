@@ -10,48 +10,89 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private let background: UIImageView = {
+        let element = UIImageView()
+        element.image =  #imageLiteral(resourceName: "background2")
+        return element
+    }()
+    
+    private let nikNameLabel: UILabel = {
+        let element = UILabel()
+        element.text = "Enter your nickname"
+        element.font = UIFont.boldSystemFont(ofSize: 28)
+        element.textAlignment = .center
+        element.numberOfLines = 0
+        return element
+    }()
+    
+    private let logo: UIImageView = {
+        let element = UIImageView()
+        element.image =  #imageLiteral(resourceName: "logoImage")
+        element.contentMode = .scaleAspectFill
+        return element
+    }()
+    
+    private let nikTextField: UITextField = {
+        let element = UITextField()
+        element.backgroundColor = UIColor.clear
+        element.layer.cornerRadius = 10
+        element.layer.borderColor = UIColor(white: 255, alpha: 1).cgColor
+        element.layer.borderWidth = 1
+        element.textAlignment = .center
+        return element
+    }()
+    
+    private let registrationButton: UIButton = {
+        let element = UIButton(type: .system)
+        element.backgroundColor = UIColor.init(red: 149/255, green: 213/255, blue: 227/255, alpha: 1)
+        element.setTitle("Registration", for: .normal)
+        element.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        element.setTitleColor(.white, for: .normal)
+        element.layer.cornerRadius = 6
+        return element
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
-        initialize()
+        sutupViews()
+        makeConstrains()
+        addTargetForBustton()
     }
     
-    private func initialize(){
-        
-        //background image
-        let background = UIImageView()
-        background.image =  #imageLiteral(resourceName: "background2")
-        
+    private func sutupViews(){
         view.addSubview(background)
+        view.addSubview(logo)
+        view.addSubview(nikNameLabel)
+        view.addSubview(nikTextField)
+        view.addSubview(registrationButton)
+    }
+    
+    private func addTargetForBustton(){
+        registrationButton.addTarget(self, action: #selector(registrationButtonTupped), for: .touchUpInside)
+    }
+    
+    @objc private func registrationButtonTupped(){
+        userName.nameUser = nikTextField.text ?? ""
+        let vc = QuestionListViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+}
+
+extension MainViewController{
+    private func makeConstrains(){
+        
         background.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
         
-        // logo millionaire
-        
-        let logo = UIImageView()
-        logo.image =  #imageLiteral(resourceName: "logoImage")
-        
-        view.addSubview(logo)
         logo.snp.makeConstraints {maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide).inset(19)
-// попробовать распереть по х и у
+            maker.top.equalTo(view.safeAreaLayoutGuide).inset(10)
             maker.centerX.equalToSuperview()
             maker.width.height.equalTo(201)
             maker.left.equalTo(107)
         }
-
-        // Nikname label
         
-        let nikNameLabel = UILabel()
-        nikNameLabel.textColor = UIColor(white: 255, alpha: 1)
-        
-        nikNameLabel.text = "Введите свой никнейм"
-        nikNameLabel.font = UIFont.boldSystemFont(ofSize: 28)
-        nikNameLabel.textAlignment = .center
-        nikNameLabel.numberOfLines = 0
-        
-        view.addSubview(nikNameLabel)
         nikNameLabel.snp.makeConstraints {maker in
             maker.left.right.equalToSuperview() .inset(6)
             maker.top.equalTo(logo.snp.bottom).offset(20)
@@ -61,14 +102,6 @@ class MainViewController: UIViewController {
             
         }
         
-        // textField Nik
-        let nikTextField = UITextField()
-        nikTextField.backgroundColor = UIColor.clear
-        nikTextField.layer.cornerRadius = 10
-        nikTextField.layer.borderColor = UIColor(white: 255, alpha: 1).cgColor
-        nikTextField.layer.borderWidth = 1
-
-        view.addSubview(nikTextField)
         nikTextField.snp.makeConstraints {maker in
             maker.centerX.equalToSuperview()
             maker.width.equalTo(261)
@@ -77,17 +110,7 @@ class MainViewController: UIViewController {
             maker.top.equalTo(nikNameLabel).offset(80)
             
         }
-
-        // Button rigistration
-        let registrationButton = UIButton(type: .system)
-        registrationButton.backgroundColor = UIColor.init(red: 149/255, green: 213/255, blue: 227/255, alpha: 1)
-        registrationButton.setTitle("Регистрация", for: .normal)
-        registrationButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        registrationButton.setTitleColor(.white, for: .normal)
-        registrationButton.layer.cornerRadius = 6
-
-
-        view.addSubview(registrationButton)
+        
         registrationButton.snp.makeConstraints {maker in
             maker.centerX.equalToSuperview()
             maker.width.equalTo(261)
@@ -95,6 +118,5 @@ class MainViewController: UIViewController {
             maker.top.equalTo(nikTextField).offset(80)
 
         }
-        
     }
 }

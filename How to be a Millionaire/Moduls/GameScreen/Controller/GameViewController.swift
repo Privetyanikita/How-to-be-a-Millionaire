@@ -56,7 +56,7 @@ final class GameViewController: UIViewController {
     }()
     
     private var questionIndex = 0
-    private let questions = Source().questionsArray
+    private var questions = Source().questionsArray
     
     private var moneyIndex = 0
     private let moneys = MoneySource().moneyArray
@@ -68,10 +68,14 @@ final class GameViewController: UIViewController {
     private let buttonHelpAudience = CustomBottomButton(image: "helpAudienceImage")
     
     
+    
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = true
         
         setupBackground()
         setupViews()
@@ -154,7 +158,7 @@ final class GameViewController: UIViewController {
             }))
         } else {
             print("Dismiss to Question Screen!")
-            dismiss(animated: true, completion: nil) // ?
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
     
@@ -163,7 +167,7 @@ final class GameViewController: UIViewController {
         timer = nil
         
         print("Dismiss to Question Screen!")
-        dismiss(animated: true, completion: nil) // ?
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     private func setupFiftyFiftyButtonTouch() {
@@ -172,10 +176,16 @@ final class GameViewController: UIViewController {
     
     @objc func buttonFiftyFiftyAction() {
         buttonFiftyFifty.bottomButtonImage.image = UIImage(named: "help50:50ImageCross")
+  
+        var buttonsArray = gameView.answerButtons
+        buttonsArray.remove(at: 1)
+        buttonsArray.remove(at: 2)
         
-//        if
-        
+        for button in buttonsArray {
+            button.alpha = 0.7
+        }
     }
+
     
     private func setupCallAFriendButtonTouch() {
         buttonCallAFriend.addTarget(self, action: #selector(buttonCallAFriendAction), for: .touchUpInside)

@@ -93,6 +93,9 @@ class StartViewController: UIViewController {
         startGame.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         startGame.setTitleColor(.green, for: .normal)
         
+        startGame.addTarget(self, action: #selector(goToGame), for: .touchUpInside)
+        
+       
         
         view.addSubview(startGame)
         startGame.snp.makeConstraints {maker in
@@ -103,7 +106,9 @@ class StartViewController: UIViewController {
             
         }
         
+        
     }
+
     @objc func rulesScreenTupped(){
         let vc = RulesViewController()
         self.navigationController?.pushViewController(vc, animated: true)

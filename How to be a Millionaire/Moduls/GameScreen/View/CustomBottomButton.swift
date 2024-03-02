@@ -10,18 +10,18 @@ import SnapKit
 
 final class CustomBottomButton: UIButton {
     
-    let helpButtonImage: UIImageView = {
+    let bottomButtonImage: UIImageView = {
         let element = UIImageView()
         element.contentMode = .scaleToFill
         element.image = UIImage(named: "callFriendImage")
         element.clipsToBounds = true
-       
+        
         return element
     }()
     
     init(image: String) {
         super.init(frame: .zero)
-        self.helpButtonImage.image = UIImage(named: image)
+        self.bottomButtonImage.image = UIImage(named: image)
         
         setupView()
         setupConstraints()
@@ -31,11 +31,12 @@ final class CustomBottomButton: UIButton {
     }
     
     private func setupView() {
-        self.addSubview(helpButtonImage)
+        self.addSubview(bottomButtonImage)
     }
     
     private func setupConstraints() {
-        helpButtonImage.snp.makeConstraints { make in
+        bottomButtonImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
             make.width.equalTo(107)
             make.height.equalTo(83)
         }

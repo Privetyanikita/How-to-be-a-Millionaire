@@ -10,7 +10,7 @@ import SnapKit
 
 final class GameView: UIView {
     
-    private var answerButtons: [CustomCenterButton] = []
+    /*private*/ var answerButtons: [CustomCenterButton] = []
     private var stackView: UIStackView = {
         var sv = UIStackView()
         sv.alignment = .center

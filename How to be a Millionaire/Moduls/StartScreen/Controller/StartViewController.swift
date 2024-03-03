@@ -56,7 +56,7 @@ class StartViewController: UIViewController {
         let nameGameLabel = UILabel()
         nameGameLabel.textColor = UIColor(white: 255, alpha: 1)
         
-        nameGameLabel.text = "Кто хочет стать миллионером?"
+        nameGameLabel.text = "Who wants to be a millionaire?"
         nameGameLabel.font = UIFont.boldSystemFont(ofSize: 36)
         nameGameLabel.textAlignment = .center
         nameGameLabel.numberOfLines = 0
@@ -71,7 +71,7 @@ class StartViewController: UIViewController {
         // Button GameRules
         let gameRules = UIButton(type: .system)
         gameRules.backgroundColor = UIColor.clear
-        gameRules.setTitle("Правила игры", for: .normal)
+        gameRules.setTitle("Game rules", for: .normal)
         gameRules.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         gameRules.setTitleColor(.green, for: .normal)
         gameRules.addTarget(self, action: #selector(rulesScreenTupped), for: .touchUpInside)
@@ -82,28 +82,24 @@ class StartViewController: UIViewController {
             maker.centerX.equalToSuperview()
             maker.width.equalTo(215)
             maker.height.equalTo(74)
-            maker.top.equalTo(519)
-            
+            maker.top.equalTo(599)
         }
         
         // Button StartGame
         let startGame = UIButton(type: .system)
         startGame.backgroundColor = UIColor.clear
-        startGame.setTitle("Начало игры", for: .normal)
+        startGame.setTitle("Start of game", for: .normal)
         startGame.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         startGame.setTitleColor(.green, for: .normal)
         
         startGame.addTarget(self, action: #selector(goToGame), for: .touchUpInside)
-        
-       
         
         view.addSubview(startGame)
         startGame.snp.makeConstraints {maker in
             maker.centerX.equalToSuperview()
             maker.width.equalTo(215)
             maker.height.equalTo(74)
-            maker.top.equalTo(599)
-            
+            maker.top.equalTo(519)
         }
         
         

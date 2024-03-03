@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol QuestionListCellDelegate: AnyObject {
+    func didLoseGame()
+}
+
 class QuestionListCell: UITableViewCell {
     
     // MARK: - Properties
@@ -14,6 +18,7 @@ class QuestionListCell: UITableViewCell {
     var questionListLabel = UILabel()
     var moneyLabel = UILabel()
     
+    weak var delegate: QuestionListCellDelegate?
 
     // MARK: - init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -43,7 +48,7 @@ class QuestionListCell: UITableViewCell {
             } else {
                 questionListImageView.image = Constants.buttonForTable.redButton // Замените "incorrectImage" на имя изображения для неправильного ответа
                 
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showLossViewController"), object: nil) // Уведомление о необходимости перехода на экран проигрыша при неправильном ответе
+                delegate?.didLoseGame()
             }
         } else {
             questionListImageView.image = question.image

@@ -15,12 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let navigationController = UINavigationController(rootViewController: StartViewController())
-        navigationController.navigationBar.tintColor = .black
-        navigationController.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
-        navigationController.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")
-        navigationController.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        window?.rootViewController = navigationController
+        window?.rootViewController = StartViewController()
         window?.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }
     }

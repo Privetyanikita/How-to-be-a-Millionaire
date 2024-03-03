@@ -15,7 +15,7 @@ class RulesViewController: UIViewController {
         return element
     }()
     
-    private let textField: UITextView = {
+    private let textRuleView: UITextView = {
         let element = UITextView()
         element.backgroundColor = .clear
         element.font = .systemFont(ofSize: 20)
@@ -25,6 +25,13 @@ class RulesViewController: UIViewController {
         element.text = textForRules.rulesText
         return element
     }()
+    
+    private let backButton: UIButton = {
+        let element = UIButton()
+        element.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        element.imageView?.tintColor = .black
+        return element
+    }()
 
     
     //MARK: - Lifecycle
@@ -32,12 +39,21 @@ class RulesViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstrains()
+        addTargerForButton()
     }
     
     private func setupViews(){
-        title = "Rules"
         view.addSubview(background)
-        view.addSubview(textField)
+        view.addSubview(textRuleView)
+        view.addSubview(backButton)
+    }
+    
+    private func addTargerForButton(){
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+    }
+    
+    @objc private func back(){
+        dismiss(animated: true)
     }
 }
 
@@ -47,8 +63,14 @@ extension RulesViewController{
             maker.edges.equalToSuperview()
         }
         
-        textField.snp.makeConstraints {maker in
-            maker.edges.equalTo(view.safeAreaLayoutGuide)
+        textRuleView.snp.makeConstraints {maker in
+            maker.top.equalTo(view.safeAreaLayoutGuide).inset(50)
+            maker.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(21)
+            make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
 }

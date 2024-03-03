@@ -127,16 +127,17 @@ final class GameViewController: UIViewController {
     }
     
     private func setupQuestion() {
-        guard questionIndex < questions.count else { return }
-        let currentQuestion = questions[curanceQuestionStructStatic.question]
-        topLabel.text = currentQuestion.question
-        numberOfquestionLabel.text = "\(curanceQuestionStructStatic.question + 1) Question"
+        if curanceQuestionStructStatic.question >= 0 && curanceQuestionStructStatic.question < questions.count {
+            let currentQuestion = questions[curanceQuestionStructStatic.question]
+            topLabel.text = currentQuestion.question
+            numberOfquestionLabel.text = "Question \(curanceQuestionStructStatic.question + 1)"
+            gameView.update(with: currentQuestion.answers)
+        }
         
-        guard moneyIndex < moneys.count else { return }
-        let currentMoney = moneys[curanceQuestionStructStatic.money]
-        moneyLabel.text = currentMoney.money
-        
-        gameView.update(with: currentQuestion.answers)
+        if curanceQuestionStructStatic.money >= 0 && curanceQuestionStructStatic.money < moneys.count {
+            let currentMoney = moneys[curanceQuestionStructStatic.money]
+            moneyLabel.text = currentMoney.money
+        }
     }
     
     //MARK: Select Answer method

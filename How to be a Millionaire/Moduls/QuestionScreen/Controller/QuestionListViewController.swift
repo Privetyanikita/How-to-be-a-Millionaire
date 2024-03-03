@@ -91,7 +91,7 @@ class QuestionListViewController: UIViewController {
     
     ///переход на другой экран по истечении нескольких секунд
     func scheduleGameViewControllerPresentation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // переход через 2 секунды
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // переход через 2 секунды
             let gameViewController = GameViewController()
             gameViewController.modalPresentationStyle = .fullScreen
             self.present(gameViewController, animated: true, completion: nil)
@@ -103,7 +103,7 @@ class QuestionListViewController: UIViewController {
 extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource, QuestionListCellDelegate {
     
     func didLoseGame() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let lossViewController = LossViewController()
             lossViewController.modalPresentationStyle = .fullScreen
             self.present(lossViewController, animated: true, completion: nil)
@@ -112,7 +112,11 @@ extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource
     
     func didWinGame() {
         let alertController = UIAlertController(title: "Congratulations!", message: "You've won 1000000$!", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            let lossViewController = LossViewController()
+            lossViewController.modalPresentationStyle = .fullScreen
+            self.present(lossViewController, animated: true, completion: nil)
+        }))
         present(alertController, animated: true, completion: nil)
     }
     
@@ -126,7 +130,7 @@ extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource
         cell.delegate = self
         
         // Проверяем, является ли это последний вопрос
-        if indexPath.row == questionList.count - 1 {
+        if indexPath.row == 0 {
             cell.isLastQuestion = true
         } else {
             cell.isLastQuestion = false

@@ -11,8 +11,6 @@ import SnapKit
 final class GameViewController: UIViewController {
     
     //MARK: - Properties
-    var onAnswerSelected: ((Bool) -> Void)? //хранилище ответа правильно/неправильно
-    
     private let logo: UIImageView = {
         let view = UIImageView()
         
@@ -87,6 +85,14 @@ final class GameViewController: UIViewController {
         
         areBottomButtonsTrue()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(showLossViewController), name: NSNotification.Name(rawValue: "showLossViewController"), object: nil)
+    }
+    
+    @objc func showLossViewController() {
+        let lossViewController = LossViewController()
+        if let presentingViewController = presentingViewController {
+            presentingViewController.present(lossViewController, animated: true, completion: nil)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -156,17 +162,25 @@ final class GameViewController: UIViewController {
             questionIndex += 1
             moneyIndex += 1
             unAlphaButton()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: DispatchWorkItem(block: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // переход назад к списку вопросов и сохранение № вопроса в синглтон
+                
+                // В случае правильного ответа
                 curanceQuestionStructStatic.answerCorrect()
-                self.dismiss(animated: true)
-            }))
-            
+                let questioniewController = QuestionListViewController()
+                questioniewController.modalPresentationStyle = .fullScreen
+                self.present(questioniewController, animated: true, completion: nil)
+            }
         } else {
             print("You lose Screen!")
-            onAnswerSelected?(false) // передача результата "неправильно"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
-                self.dismiss(animated: true)
-            }))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // переход назад к списку вопросов
+                
+                // В случае неправильного ответа
+                curanceQuestionStructStatic.answerIncorrect()
+                let questioniewController = QuestionListViewController()
+                questioniewController.modalPresentationStyle = .fullScreen
+                self.present(questioniewController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -177,7 +191,9 @@ final class GameViewController: UIViewController {
         timer = nil
         
         print("Dismiss to Question Screen!")
-        self.dismiss(animated: true)
+        let lossViewController = LossViewController()
+        lossViewController.modalPresentationStyle = .fullScreen
+        self.present(lossViewController, animated: true, completion: nil)
     }
     
     //MARK: Fifty Fifty Button logic

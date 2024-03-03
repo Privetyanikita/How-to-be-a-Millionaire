@@ -33,10 +33,21 @@ class QuestionListCell: UITableViewCell {
     }
     
     // MARK: - UI setup
-    func set(question: QuestionModel) {
-        questionListImageView.image = question.image
+    func set(question: QuestionModel, isCorrectAnswer: Bool?) {
         questionListLabel.text = question.question
         moneyLabel.text = question.money
+        
+        if let isCorrect = isCorrectAnswer {
+            if isCorrect {
+                questionListImageView.image = Constants.buttonForTable.greenButton // Замените "correctImage" на имя изображения для правильного ответа
+            } else {
+                questionListImageView.image = Constants.buttonForTable.redButton // Замените "incorrectImage" на имя изображения для неправильного ответа
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showLossViewController"), object: nil) // Уведомление о необходимости перехода на экран проигрыша при неправильном ответе
+            }
+        } else {
+            questionListImageView.image = question.image
+        }
     }
     
     func configureImageView() {
@@ -56,7 +67,6 @@ class QuestionListCell: UITableViewCell {
         moneyLabel.adjustsFontSizeToFitWidth = true
         moneyLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         moneyLabel.textAlignment = .right
-        
     }
     
     
@@ -77,10 +87,7 @@ class QuestionListCell: UITableViewCell {
             questionListImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             questionListImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            questionListImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-//            <#T##UIView#>.widthAnchor.constraint(equalToConstant: <#T##CGFloat#>),
-//            <#T##UIView#>.heightAnchor.constraint(equalToConstant: <#T##CGFloat#>),
+            questionListImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
     }
@@ -100,7 +107,7 @@ class QuestionListCell: UITableViewCell {
             questionListLabel.centerYAnchor.constraint(equalTo: questionListImageView.centerYAnchor),
             
             questionListLabel.widthAnchor.constraint(equalToConstant: 100),
-            questionListLabel.heightAnchor.constraint(equalToConstant: 30),
+            questionListLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
         
     }
@@ -120,7 +127,7 @@ class QuestionListCell: UITableViewCell {
             moneyLabel.centerYAnchor.constraint(equalTo: questionListImageView.centerYAnchor),
             
             moneyLabel.widthAnchor.constraint(equalToConstant: 100),
-            moneyLabel.heightAnchor.constraint(equalToConstant: 30),
+            moneyLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
         
     }

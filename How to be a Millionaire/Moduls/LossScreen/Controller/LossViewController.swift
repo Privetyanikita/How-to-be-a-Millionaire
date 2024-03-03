@@ -55,6 +55,7 @@ class LossViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        addTargetForButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +69,16 @@ class LossViewController: UIViewController {
         view.addSubview(numbAttempt)
         view.addSubview(loseLabel)
         view.addSubview(playAgainButton)
+    }
+    
+    private func addTargetForButton(){
+        playAgainButton.addTarget(self, action: #selector(playAgain), for: .touchUpInside)
+    }
+    
+    @objc private func playAgain(){
+        let vc = StartViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
 

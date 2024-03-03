@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
         let element = UILabel()
         element.text = "Enter your nickname"
         element.font = UIFont.boldSystemFont(ofSize: 28)
+        element.textColor = .white
         element.textAlignment = .center
         element.numberOfLines = 0
         return element
@@ -52,6 +53,13 @@ class MainViewController: UIViewController {
         return element
     }()
     
+    private let backButton: UIButton = {
+        let element = UIButton()
+        element.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        element.imageView?.tintColor = .black
+        return element
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sutupViews()
@@ -65,10 +73,12 @@ class MainViewController: UIViewController {
         view.addSubview(nikNameLabel)
         view.addSubview(nikTextField)
         view.addSubview(registrationButton)
+        view.addSubview(backButton)
     }
     
     private func addTargetForBustton(){
         registrationButton.addTarget(self, action: #selector(registrationButtonTupped), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
     
     @objc private func registrationButtonTupped(){
@@ -77,10 +87,19 @@ class MainViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
+    
+    @objc private func back(){
+        dismiss(animated: true)
+    }
 }
 
 extension MainViewController{
     private func makeConstrains(){
+        
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(21)
+            make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
+        }
         
         background.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()

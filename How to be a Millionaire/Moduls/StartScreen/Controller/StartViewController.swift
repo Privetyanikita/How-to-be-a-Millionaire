@@ -107,12 +107,14 @@ class StartViewController: UIViewController {
 
     @objc private func rulesScreenTupped(){
         let vc = RulesViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     @objc private func goToGame(){
         let vc = MainViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
 }

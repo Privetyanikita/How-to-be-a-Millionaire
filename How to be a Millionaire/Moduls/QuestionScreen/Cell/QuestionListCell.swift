@@ -9,6 +9,7 @@ import UIKit
 
 protocol QuestionListCellDelegate: AnyObject {
     func didLoseGame()
+    func didWinGame()
 }
 
 class QuestionListCell: UITableViewCell {
@@ -19,6 +20,7 @@ class QuestionListCell: UITableViewCell {
     var moneyLabel = UILabel()
     
     weak var delegate: QuestionListCellDelegate?
+    var isLastQuestion: Bool = false
 
     // MARK: - init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,6 +47,10 @@ class QuestionListCell: UITableViewCell {
         if let isCorrect = isCorrectAnswer {
             if isCorrect {
                 questionListImageView.image = Constants.buttonForTable.greenButton // Замените "correctImage" на имя изображения для правильного ответа
+                
+                if isLastQuestion {
+                    delegate?.didWinGame()
+                }
             } else {
                 questionListImageView.image = Constants.buttonForTable.redButton // Замените "incorrectImage" на имя изображения для неправильного ответа
                 

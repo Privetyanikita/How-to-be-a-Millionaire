@@ -40,6 +40,7 @@
 		8447B4792B8BAB0600223426 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8447B4782B8BAB0600223426 /* SnapKit */; };
 		8447B47B2B8BAB0600223426 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8447B47A2B8BAB0600223426 /* SnapKit-Dynamic */; };
 		848CBAD32B9068AE0084CDA2 /* questionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD22B9068AE0084CDA2 /* questionData.swift */; };
+		84A5810F2B93E3AD0026CE02 /* userName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5810E2B93E3AD0026CE02 /* userName.swift */; };
 		84BDC2882B8BADE900DE3466 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC2872B8BADE900DE3466 /* QuestionModel.swift */; };
 		84BDC28A2B8BAE1E00DE3466 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC2892B8BAE1E00DE3466 /* QuestionView.swift */; };
 		84BDC28C2B8BAE2D00DE3466 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDC28B2B8BAE2D00DE3466 /* QuestionListViewController.swift */; };
@@ -80,6 +81,7 @@
 		8447B4732B8B8CFD00223426 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		8447B4752B8BA57200223426 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		848CBAD22B9068AE0084CDA2 /* questionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionData.swift; sourceTree = "<group>"; };
+		84A5810E2B93E3AD0026CE02 /* userName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userName.swift; sourceTree = "<group>"; };
 		84BDC2872B8BADE900DE3466 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		84BDC2892B8BAE1E00DE3466 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		84BDC28B2B8BAE2D00DE3466 /* QuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				848CBAD12B90688F0084CDA2 /* QuestionData */,
 				840966B62B93773D0028C0EC /* curanceQuestionStructStatic.swift */,
 				1A345B202B937F6B00CAA4A6 /* BottomButtonStaticManager.swift */,
+				84A5810E2B93E3AD0026CE02 /* userName.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				84BDC28C2B8BAE2D00DE3466 /* QuestionListViewController.swift in Sources */,
 				84090F3B2B8CF947002E8493 /* LossViewController.swift in Sources */,
 				8447B4702B8B8CDB00223426 /* RuleModel.swift in Sources */,
+				84A5810F2B93E3AD0026CE02 /* userName.swift in Sources */,
 				8447B4742B8B8CFD00223426 /* RulesViewController.swift in Sources */,
 				1AAC67002B8F38750052C70E /* CustomBottomButton.swift in Sources */,
 				8447B4412B8B865400223426 /* AppDelegate.swift in Sources */,

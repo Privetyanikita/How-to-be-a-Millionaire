@@ -84,15 +84,6 @@ final class GameViewController: UIViewController {
         setupHelpAudienceButtonTouch()
         
         areBottomButtonsTrue()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(showLossViewController), name: NSNotification.Name(rawValue: "showLossViewController"), object: nil)
-    }
-    
-    @objc func showLossViewController() {
-        let lossViewController = LossViewController()
-        if let presentingViewController = presentingViewController {
-            presentingViewController.present(lossViewController, animated: true, completion: nil)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

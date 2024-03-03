@@ -91,7 +91,7 @@ class QuestionListViewController: UIViewController {
     
     ///переход на другой экран по истечении нескольких секунд
     func scheduleGameViewControllerPresentation() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // переход через 2 секунды
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // переход через 2 секунды
             let gameViewController = GameViewController()
             gameViewController.modalPresentationStyle = .fullScreen
             self.present(gameViewController, animated: true, completion: nil)
@@ -100,7 +100,15 @@ class QuestionListViewController: UIViewController {
 }
 
 // MARK: - Extensions
-extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource {
+extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource, QuestionListCellDelegate {
+    
+    func didLoseGame() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let lossViewController = LossViewController()
+            lossViewController.modalPresentationStyle = .fullScreen
+            self.present(lossViewController, animated: true, completion: nil)
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionList.count
@@ -109,6 +117,7 @@ extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.questionCell) as! QuestionListCell
         let question = questionList[indexPath.row]
+        cell.delegate = self
         
         cell.set(question: question, isCorrectAnswer: curanceQuestionStructStatic.correctAnswers.indices.contains(questionList.count - 1 - indexPath.row) ? curanceQuestionStructStatic.correctAnswers[questionList.count - 1 - indexPath.row] : nil)
         

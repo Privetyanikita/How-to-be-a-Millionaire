@@ -139,10 +139,10 @@ final class GameViewController: UIViewController {
         guard questionIndex < questions.count else { return }
         let currentQuestion = questions[curanceQuestionStructStatic.question]
         topLabel.text = currentQuestion.question
-        numberOfquestionLabel.text = "\(questionIndex + 1) Question"
+        numberOfquestionLabel.text = "\(curanceQuestionStructStatic.question + 1) Question"
         
         guard moneyIndex < moneys.count else { return }
-        let currentMoney = moneys[moneyIndex]
+        let currentMoney = moneys[curanceQuestionStructStatic.money]
         moneyLabel.text = currentMoney.money
         
         gameView.update(with: currentQuestion.answers)
@@ -152,7 +152,7 @@ final class GameViewController: UIViewController {
     
     private func selectAnswer(idx: Int) {
         guard questionIndex < questions.count else { return }
-        let currentQuestion = questions[questionIndex]
+        let currentQuestion = questions[curanceQuestionStructStatic.question]
         
         let answer = currentQuestion.answers[idx]
         
@@ -173,7 +173,7 @@ final class GameViewController: UIViewController {
         } else {
             print("You lose Screen!")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // переход назад к списку вопросов
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // переход назад к списку вопросов
                 
                 // В случае неправильного ответа
                 curanceQuestionStructStatic.answerIncorrect()
@@ -227,7 +227,7 @@ final class GameViewController: UIViewController {
     @objc func buttonCallAFriendAction() {
         
         if BottomButtonStaticManager.callAFriendButton == false {
-            BottomButtonStaticManager.fiftyFiftyButton = true
+            BottomButtonStaticManager.callAFriendButton = true
             
             buttonCallAFriend.bottomButtonImage.image = UIImage(named: "callFriendImageCross")
             var buttonsArray = gameView.answerButtons

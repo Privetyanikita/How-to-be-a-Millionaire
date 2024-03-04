@@ -10,16 +10,17 @@ import AVFoundation
 class GameMusicManager {
     
     static let shared = GameMusicManager()
-    private var misic: AVAudioPlayer?
+    private var music: AVAudioPlayer?
     
     private init() {}
     
     func playSound(soundFileName: String) {
         guard let url = Bundle.main.url(forResource: soundFileName, withExtension: "mp3") else { return }
-        misic = try! AVAudioPlayer(contentsOf: url)
-        misic?.play()
+        music = try! AVAudioPlayer(contentsOf: url)
+        music?.volume = 0.5
+        music?.play()
     }
     func stopSound() {
-        misic?.stop()
+        music?.stop()
     }
 }

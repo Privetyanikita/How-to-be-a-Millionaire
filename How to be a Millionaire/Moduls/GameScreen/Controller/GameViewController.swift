@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 final class GameViewController: UIViewController {
     
@@ -66,8 +67,13 @@ final class GameViewController: UIViewController {
     private let buttonCallAFriend = CustomBottomButton(image: "callFriendImage")
     private let buttonHelpAudience = CustomBottomButton(image: "helpAudienceImage")
     
-    
     //MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        GameMusicManager.shared.playSound(soundFileName: "zvuk-chasov-vo-vremya-igryi-kto-hochet-stat-millionerom-kogda-igrok-dumaet-nad-voprosom-43473-1%3F_%3D1.mp3")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +97,6 @@ final class GameViewController: UIViewController {
         
         timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: false) { [weak self] timer in
             self?.youLose()
-            
         }
     }
     
@@ -154,6 +159,7 @@ final class GameViewController: UIViewController {
             questionIndex += 1
             moneyIndex += 1
             unAlphaButton()
+            GameMusicManager.shared.playSound(soundFileName: "otvet-vernyiy-5267__=2.mp3")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // переход назад к списку вопросов и сохранение № вопроса в синглтон
                 
                 // В случае правильного ответа
@@ -164,7 +170,7 @@ final class GameViewController: UIViewController {
             }
         } else {
             print("You lose Screen!")
-            
+            GameMusicManager.shared.playSound(soundFileName: "zvuk-nepravilnogo-otveta-vkto-hochet-stat-millionerom-5270__=6.mp3")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // переход назад к списку вопросов
                 
                 // В случае неправильного ответа
@@ -188,7 +194,7 @@ final class GameViewController: UIViewController {
         self.present(lossViewController, animated: true, completion: nil)
     }
     
-    //MARK: Fifty Fifty Button logic
+    //MARK: Fifty Figty Button logic
     
     private func setupFiftyFiftyButtonTouch() {
         buttonFiftyFifty.addTarget(self, action: #selector(buttonFiftyFiftyAction), for: .touchUpInside)
@@ -289,8 +295,8 @@ extension GameViewController {
         }
         topLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(9)
-            make.right.equalToSuperview().offset(7)
-            make.width.equalTo(281)
+            make.right.equalToSuperview().inset(7)
+            make.width.equalTo(261)
             make.height.equalTo(126)
             
         }

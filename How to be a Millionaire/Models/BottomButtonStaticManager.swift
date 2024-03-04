@@ -14,4 +14,9 @@ struct BottomButtonStaticManager {
     static var callAFriendButton = false
     static var helpAudienctButton = false
     
+    static func reset(){
+        fiftyFiftyButton = false
+        callAFriendButton = false
+        helpAudienctButton = false
+    }
 }

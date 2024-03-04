@@ -111,11 +111,11 @@ extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func didWinGame() {
-        let alertController = UIAlertController(title: "Congratulations!", message: "You've won 1000000$!", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Congratulations \(userName.nameUser)!", message: "You've won 1000000$!", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            let lossViewController = LossViewController()
-            lossViewController.modalPresentationStyle = .fullScreen
-            self.present(lossViewController, animated: true, completion: nil)
+            let startViewController = StartViewController()
+            startViewController.modalPresentationStyle = .fullScreen
+            self.present(startViewController, animated: true, completion: nil)
         }))
         present(alertController, animated: true, completion: nil)
     }

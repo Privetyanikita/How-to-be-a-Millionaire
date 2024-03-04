@@ -297,7 +297,7 @@ extension GameViewController {
         numberOfquestionLabel.snp.makeConstraints { make in
             make.top.equalTo(logo.snp.bottom).offset(14)
             make.left.equalToSuperview().offset(27)
-            make.width.equalTo(121)
+            make.width.equalTo(150)
             make.height.equalTo(46)
         }
         moneyLabel.snp.makeConstraints { make in

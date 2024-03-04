@@ -295,8 +295,8 @@ extension GameViewController {
         }
         topLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(9)
-            make.right.equalToSuperview().offset(7)
-            make.width.equalTo(281)
+            make.right.equalToSuperview().inset(7)
+            make.width.equalTo(261)
             make.height.equalTo(126)
             
         }

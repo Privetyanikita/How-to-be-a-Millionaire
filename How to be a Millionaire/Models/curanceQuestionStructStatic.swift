@@ -28,4 +28,10 @@ struct curanceQuestionStructStatic {
         correctAnswers.append(false) // добавляем информацию о неправильном ответе
       }
     }
+    
+    static func reset(){
+        question = 0
+        money = 0
+        correctAnswers = []
+    }
 }

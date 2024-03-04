@@ -76,6 +76,8 @@ class LossViewController: UIViewController {
     }
     
     @objc private func playAgain(){
+        curanceQuestionStructStatic.reset()
+        BottomButtonStaticManager.reset()
         let vc = StartViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)

@@ -13,7 +13,7 @@
 * AutoLayout programmaticaly + Snapkit
 * iOS 15+
 
-  ## Screenshots
+## Screenshots
   
 <p align="center">
 <img src="https://github.com/Privetyanikita/How-to-be-a-Millionaire/blob/develop/How%20to%20be%20a%20Millionaire/photos%20for%20read%20me/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-03-03%20at%2010.07.21.png" width="140"/> <img src="https://github.com/Privetyanikita/How-to-be-a-Millionaire/blob/develop/How%20to%20be%20a%20Millionaire/photos%20for%20read%20me/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-03-03%20at%2010.07.47.png" width="140"/>  <img src="https://github.com/Privetyanikita/How-to-be-a-Millionaire/blob/develop/How%20to%20be%20a%20Millionaire/photos%20for%20read%20me/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-03-03%20at%2010.07.58.png" width="140"/> 

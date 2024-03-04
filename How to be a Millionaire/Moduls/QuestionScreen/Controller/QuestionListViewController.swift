@@ -54,7 +54,7 @@ class QuestionListViewController: UIViewController {
         setTableViewDelegates()
         setTableViewBackground()
         setTableViewLogo()
-        tableView.rowHeight = 50
+        tableView.rowHeight = 45
         tableView.register(QuestionListCell.self, forCellReuseIdentifier: Cells.questionCell)
         tableView.separatorStyle = .none
 //        tableView.isUserInteractionEnabled = false //отключает нажатие ячеек

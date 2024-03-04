@@ -16,6 +16,7 @@ class StartViewController: UIViewController {
         view.backgroundColor = .red
         view.backgroundColor = .green
         initialize()
+        GameMusicManager.shared.playSound(soundFileName: "bolee-kachestvennyiy-zvuk-mojet-on-vam-nujen-5284__=8.mp3")
     }
     
     private func initialize(){

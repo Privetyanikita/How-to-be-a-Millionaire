@@ -16,9 +16,16 @@ class GameMusicManager {
     
     func playSound(soundFileName: String) {
         guard let url = Bundle.main.url(forResource: soundFileName, withExtension: "mp3") else { return }
-        music = try! AVAudioPlayer(contentsOf: url)
-        music?.volume = 0.5
-        music?.play()
+                    
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            music = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+                
+            guard let music = music else { return }
+                music.play()
+        } catch let error {
+            print(error.localizedDescription)
+            }
     }
     func stopSound() {
         music?.stop()
